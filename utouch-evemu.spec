@@ -70,3 +70,13 @@ find %{buildroot}%{_libdir} -name '*.la' -type f -delete -print
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
  
+
+
+%changelog
+* Tue Nov 01 2011 Matthew Dawkins <mattydaw@mandriva.org> 1.0.6-1
++ Revision: 709286
+- imported package utouch-evemu
+
+
+* Sat Oct 29 2011 Matthew Dawkins <mdawkins@unity-linux.org> 1.0.6-1-unity2011
+- import for Unity
