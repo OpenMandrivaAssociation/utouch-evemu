@@ -64,6 +64,7 @@ find %{buildroot}%{_libdir} -name '*.la' -type f -delete -print
 %doc COPYING
 %{_bindir}/evemu-*
 %{_mandir}/man1/evemu-*
+%{python_sitelib}/evemu
  
 %files -n %{libname}
 %defattr(-,root,root)
