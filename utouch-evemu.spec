@@ -61,7 +61,7 @@ find %{buildroot}%{_libdir} -name '*.la' -type f -delete -print
  
 %files
 %defattr(-,root,root)
-%docCOPYING
+%doc COPYING
 %{_bindir}/evemu-*
 %{_mandir}/man1/evemu-*
  
