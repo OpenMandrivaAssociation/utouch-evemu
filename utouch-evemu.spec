@@ -1,19 +1,24 @@
-%define major 1
+%define major 3
 %define libname	%mklibname	%{name} %{major}
 %define develname	%mklibname	%{name} -d
+
+%define oname evemu
  
 Name:           utouch-evemu
-Version:        1.0.6
+Version:        2.7.0
 Release:        1
 License:        GPL-3.0
 Summary:        Event emulation for the uTouch stack
-Url:            http://launchpad.net/utouch-evemu
+URL:		https://www.freedesktop.org/wiki/Evemu/
+Source0:	https://www.freedesktop.org/software/%{oname}/%{oname}-%{version}.tar.xz
 Group:          Graphical desktop/Other
-Source:         %{name}-%{version}.tar.gz
-# To build the manpages 'asciidoc' and 'xmlto' are required.
-BuildRequires:  asciidoc
-BuildRequires:  pkgconfig
-BuildRequires:  xmlto
+
+BuildRequires:	automake
+BuildRequires:	libtool
+BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(libevdev)
+BuildRequires:	xmlto
+BuildRequires:	asciidoc
 
 Requires:	%{libname} = %{version}-%{release}
  
@@ -42,23 +47,24 @@ framework, and provides tools to emulate kernel evdev devices.
 This package provides the development files.
  
 %prep
-%setup -q
+%autosetup -n %{oname}-%{version}
  
 %build
-%configure2_5x \
+%configure \
   --disable-static
-%make
+%make_build
  
 %install
-%makeinstall_std
+%make_install
 find %{buildroot}%{_libdir} -name '*.la' -type f -delete -print
  
  
 %files
 %defattr(-,root,root)
-%doc ChangeLog README COPYING
+%doc COPYING
 %{_bindir}/evemu-*
 %{_mandir}/man1/evemu-*
+%{python_sitelib}/evemu
  
 %files -n %{libname}
 %defattr(-,root,root)
