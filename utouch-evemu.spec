@@ -1,6 +1,8 @@
 %define major 3
 %define libname	%mklibname	%{name} %{major}
 %define develname	%mklibname	%{name} -d
+
+%define oname evemu
  
 Name:           utouch-evemu
 Version:        2.7.0
@@ -8,13 +10,13 @@ Release:        1
 License:        GPL-3.0
 Summary:        Event emulation for the uTouch stack
 URL:		https://www.freedesktop.org/wiki/Evemu/
-Source0:	https://www.freedesktop.org/software/%{name}/%{name}-%{version}.tar.xz
+Source0:	https://www.freedesktop.org/software/%{oname}/%{oname}-%{version}.tar.xz
 Group:          Graphical desktop/Other
 
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig(python)
-BuildRequires:	pkgconfig(libevdev) >= 0.5
+BuildRequires:	pkgconfig(libevdev)
 BuildRequires:	xmlto
 BuildRequires:	asciidoc
 
@@ -45,7 +47,7 @@ framework, and provides tools to emulate kernel evdev devices.
 This package provides the development files.
  
 %prep
-%setup -q
+%autosetup -n %{oname}-%{version}
  
 %build
 %configure \
