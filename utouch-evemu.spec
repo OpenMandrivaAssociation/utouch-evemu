@@ -13,6 +13,9 @@ URL:		https://www.freedesktop.org/wiki/Evemu/
 Source0:	https://www.freedesktop.org/software/%{oname}/%{oname}-%{version}.tar.xz
 Group:          Graphical desktop/Other
 
+BuildRequires:	autoconf
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig(python)
