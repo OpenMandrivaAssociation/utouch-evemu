@@ -6,7 +6,7 @@
  
 Name:           utouch-evemu
 Version:        2.7.0
-Release:        1
+Release:        2
 License:        GPL-3.0
 Summary:        Event emulation for the uTouch stack
 URL:		https://www.freedesktop.org/wiki/Evemu/
